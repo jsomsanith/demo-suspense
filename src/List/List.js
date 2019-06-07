@@ -127,6 +127,10 @@ TableRow.propTypes = {
 };
 
 export default function List(props) {
+	if (!props.collection) {
+		return null;
+	}
+
 	const { displayMode = 'table', ...rest } = props;
 	switch (displayMode) {
 		case 'table':
