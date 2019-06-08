@@ -1,7 +1,10 @@
 let cache = null;
 
 function readCache() {
-	return cache;
+	if (cache) {
+		return cache;
+	}
+	throw get();
 }
 
 function get() {
