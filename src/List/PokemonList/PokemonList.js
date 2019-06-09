@@ -1,6 +1,6 @@
 import React from 'react';
 import List from '../List';
-import PokemonService from './PokemonService';
+import PokemonsResource from './PokemonService';
 
 export const headers = [
 	{ key: 'image', label: 'Image', type: 'image' },
@@ -13,6 +13,6 @@ export const headers = [
 ];
 
 export default function PokemonList() {
-	const collection = PokemonService.readCache();
+	const collection = PokemonsResource.read();
 	return <List collection={collection} headers={headers} id="pokemon-list" title="Pokemon list" />;
 }

@@ -1,21 +1,7 @@
-let cache = null;
+import { unstable_createResource } from 'react-cache';
 
-function readCache() {
-	if (cache) {
-		return cache;
-	}
-	throw get();
-}
+const PokemonsResource = unstable_createResource(() => {
+	return fetch(`/assets/pokemons.json`).then(resp => resp.json());
+});
 
-function get() {
-	return fetch('/assets/pokemons.json')
-		.then(resp => resp.json())
-		.then(pokemons => {
-			cache = pokemons;
-		});
-}
-
-export default {
-	readCache,
-	get,
-};
+export default PokemonsResource;
