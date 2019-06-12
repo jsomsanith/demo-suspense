@@ -4,7 +4,12 @@ import './Loading.css';
 
 export default function Loading() {
 	return (
-		<div className="loading">
+		<div
+			className="loading"
+			role="alert"
+			aria-label="Content is loading, please wait..."
+			aria-busy="true"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 841.9 595.3"
